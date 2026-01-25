@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
 import { doctors } from "../assets/assets_frontend/assets"
 import type { Doctor } from "../components/Card"
 import ActionAreaCard from "../components/Card"
+
 
 export const All_Doctors = () => {
   return (
@@ -9,7 +11,9 @@ export const All_Doctors = () => {
         <div className="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {doctors.map((doctor: Doctor, index: number) => (
             <div key={index} className="p-3">
-              <ActionAreaCard doc={doctor} />
+              <Link to={`/doctor/${doctor.id}`} className="block">
+                <ActionAreaCard doc={doctor} />
+              </Link>
             </div>
           ))}
         </div>

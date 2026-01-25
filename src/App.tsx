@@ -5,6 +5,9 @@ import { HomePage } from './pages/HomePage'
 import { All_Doctors } from './pages/All_Doctors'
 import { Footer } from './sections/Footer'
 import NotFound from './pages/NotFound'
+import { DoctorPage } from './pages/DoctorPage'
+import { About } from './pages/About'
+import { Contact } from './pages/Contact'
 
 function App() {
   return (
@@ -16,7 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path='/all_doctors' element={<All_Doctors />} />
-          <Route path='*' element = {<NotFound />}/>
+          <Route path='/doctor/:id' element={<DoctorPage />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
       <footer className='bg-gray-50 px-3'>
