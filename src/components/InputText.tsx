@@ -1,8 +1,8 @@
 import { TextField } from '@mui/material'
 
-export const InputText = ({ label  }: { label: string }) => {
+export const InputText = ({ label, type }: { label: string, type: string }) => {
     return (
-        <TextField fullWidth label={label} id="margin-none" size='small' color='info'
+        <TextField fullWidth label={label} type={type} id="margin-none" size='small' color='info'
             sx={{
                 "& .MuiOutlinedInput-root": {
                     "& fieldset": {
@@ -13,7 +13,7 @@ export const InputText = ({ label  }: { label: string }) => {
                     },
                     "&.Mui-focused fieldset": {
                         borderColor: '#0288d1',
-                        borderWidth:"1px"
+                        borderWidth: "1px"
                     },
                 }
             }} />

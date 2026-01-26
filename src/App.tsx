@@ -8,6 +8,9 @@ import NotFound from './pages/NotFound'
 import { DoctorPage } from './pages/DoctorPage'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
+import { Profile } from './pages/Profile'
+import { Register } from './pages/Register'
+import { Login } from './pages/Login'
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
           <Route path='/doctor/:id' element={<DoctorPage />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/Register' element={<Register />} />
+          <Route path='/Login' element={<Login />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
