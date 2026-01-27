@@ -11,9 +11,9 @@ const Register = () => {
 
                 {/* Header */}
                 <div className="text-center mb-6">
-                    <h2 className="text-2xl font-semibold text-gray-800">
+                    <h1 className="text-2xl font-semibold text-gray-800">
                         Create Account
-                    </h2>
+                    </h1>
                     <p className="text-sm text-gray-500 mt-1">
                         Sign up to get started
                     </p>

@@ -4,7 +4,7 @@ const About = () => {
     return (
         <section className="p-2 pt-12">
             <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="md:grid grid-cols-3 gap-5">
                     <div className="text-center rounded-lg mb-5">
                         <img
                             loading="lazy"
