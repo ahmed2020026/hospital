@@ -2,7 +2,7 @@ import { InputText } from "../components/InputText"
 import { ButtonClick } from "../components/ButtonClick"
 import { Link } from "react-router-dom"
 
-export const Login = () => {
+const Login = () => {
 
     return (
         <section className="section p-2 flex items-center justify-center">
@@ -44,3 +44,4 @@ export const Login = () => {
         </section>
     )
 }
+export default Login;

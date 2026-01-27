@@ -1,7 +1,7 @@
 import { assets } from "../assets/assets_admin/assets"
 import { ButtonClick } from "../components/ButtonClick"
 
-export const Profile = () => {
+const Profile = () => {
     const user = {
         name: "Ahmed Samir",
         email: "asm@gmail.com",
@@ -105,3 +105,4 @@ export const Profile = () => {
         </section>
     )
 }
+export default Profile;

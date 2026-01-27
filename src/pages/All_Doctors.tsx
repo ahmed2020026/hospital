@@ -4,7 +4,7 @@ import type { Doctor } from "../components/Card"
 import ActionAreaCard from "../components/Card"
 
 
-export const All_Doctors = () => {
+const All_Doctors = () => {
   return (
     <section className="section p-2">
       <div className="container">
@@ -21,3 +21,4 @@ export const All_Doctors = () => {
     </section>
   )
 }
+export default All_Doctors;

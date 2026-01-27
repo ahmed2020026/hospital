@@ -73,10 +73,10 @@ export const NavBar = () => {
                     <div className="icons-links">
                         <div className="relative">
                             <span className="lg:hidden" ref={btnRef} onClick={toggleMenu}>
-                                <IconButtonNav icon={open ? <CloseIcon /> : <MenuIcon />} color="false" bgColor="false" />
+                                <IconButtonNav text="icon menu" icon={open ? <CloseIcon /> : <MenuIcon />} color="false" bgColor="false" />
                             </span>
                             <span onClick={toggleMenuProfile} ref={btnRefFace}>
-                                <IconButtonNav icon={<AccountCircleIcon />} />
+                                <IconButtonNav icon={<AccountCircleIcon />} text="icon user" />
                             </span>
                             <ul ref={menuRefFace} className={`${op ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"} absolute right-0 top-[110%] w-56 bg-white border border-gray-200 rounded-lg shadow-lg p-1 transition-all duration-300 ease-out origin-top`}>
                                 <li className="rounded-md overflow-hidden">

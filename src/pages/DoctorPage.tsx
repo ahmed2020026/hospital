@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom"
 import type { Doctor } from "../components/Card";
 import { doctors } from "../assets/assets_frontend/assets";
-export const DoctorPage = () => {
+
+const DoctorPage = () => {
     const { id } = useParams();
     const doc = doctors.find(
         (doctor: Doctor) => doctor.id == id
@@ -12,7 +13,7 @@ export const DoctorPage = () => {
             <div className="container">
                 <div className="md:grid grid-cols-3 gap-5">
                     <div className="text-center bg-blue-600 rounded-lg mb-5">
-                        <img src={doc?.image} className="block mx-auto rounded-md" alt={doc?.name} />
+                        <img src={doc?.image} loading="lazy" className="block mx-auto rounded-md" alt={doc?.name} />
                     </div>
                     <div className="col-span-2">
                         <h2 className="flex items-center gap-2 text-3xl font-medium text-gray-700">{doc?.name}</h2>
@@ -32,3 +33,5 @@ export const DoctorPage = () => {
         </section>
     )
 }
+
+export default DoctorPage;

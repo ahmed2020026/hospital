@@ -3,7 +3,7 @@ import { ButtonClick } from "../components/ButtonClick"
 import { SelectInput } from "../components/SelectInput"
 import { Link } from "react-router-dom"
 
-export const Register = () => {
+const Register = () => {
 
     return (
         <section className="section p-2 flex items-center justify-center">
@@ -75,3 +75,5 @@ export const Register = () => {
         </section>
     )
 }
+
+export default Register;

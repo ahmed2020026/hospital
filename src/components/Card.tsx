@@ -39,6 +39,7 @@ export default function ActionAreaCard({ doc }: { doc: Doctor }) {
                 <CardMedia
                     component="img"
                     height="160"
+                    loading='lazy'
                     image={doc.image}
                     alt={doc.name}
                     sx={{
@@ -56,7 +57,7 @@ export default function ActionAreaCard({ doc }: { doc: Doctor }) {
                     }}>
                         Available
                     </Typography>
-                    <Typography gutterBottom variant="h6" component="div" sx={{ fontSize: "1.1rem" }}>
+                    <Typography gutterBottom variant="h6" component="h2" sx={{ fontSize: "1.1rem" }}>
                         {doc.name}
                     </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>

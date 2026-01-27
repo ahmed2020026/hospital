@@ -10,7 +10,7 @@ export const Special = () => {
                 {
                     specialityData.map((item , index) => (
                         <div key={index} className="md:p-5 text-center">
-                            <img src={item.image} alt={item.speciality} className="w-20 sm:w-28 block mx-auto mb-5" />
+                            <img src={item.image} loading="eager" alt={item.speciality} className="w-20 sm:w-28 block mx-auto mb-5" />
                             <p className="text-sm">{item.speciality}</p>
                         </div>
                     ))

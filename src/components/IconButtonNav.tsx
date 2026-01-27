@@ -1,9 +1,10 @@
 import { IconButton } from "@mui/material";
 import React from "react";
 
-export const IconButtonNav = ({ icon, color, bgColor }: { icon: React.ReactNode, color?: string, bgColor?: string }) => {
+export const IconButtonNav = ({ icon, color, bgColor , text="Icon" }: { icon: React.ReactNode, color?: string, bgColor?: string , text?:string}) => {
     return (
         <IconButton
+            aria-label={text}
             sx={{
                 color: "gray",
                 transition: "0.3s",

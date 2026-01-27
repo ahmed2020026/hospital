@@ -28,7 +28,7 @@ export const Appointment = () => {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <img src={assets.appointment_img} className="w-96" alt="Appointment image" />
+                    <img src={assets.appointment_img} loading="lazy" className="w-96" alt="Appointment image" />
                 </div>
             </div>
         </div>

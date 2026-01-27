@@ -5,6 +5,7 @@ export const ButtonClick = ({ text, color = "info" }: {
 }) => {
     return (
         <Button
+            type="button"
             color={color}
             variant="contained"
         >{text}</Button>

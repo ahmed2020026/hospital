@@ -2,7 +2,7 @@ import { TextField } from '@mui/material'
 
 export const InputText = ({ label, type }: { label: string, type: string }) => {
     return (
-        <TextField fullWidth label={label} type={type} id="margin-none" size='small' color='info'
+        <TextField fullWidth aria-label={label} label={label} type={type} id="margin-none" size='small' color='info'
             sx={{
                 "& .MuiOutlinedInput-root": {
                     "& fieldset": {
