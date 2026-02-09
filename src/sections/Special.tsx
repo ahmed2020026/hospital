@@ -10,7 +10,7 @@ export const Special = () => {
                 discripion="Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free."
             />
 
-            <div className="hide-scrollbar px-5 grid grid-flow-col auto-cols-max gap-4 justify-start overflow-x-auto py-4 snap-x snap-mandatory">
+            <div className="hide-scrollbar px-5 grid grid-flow-col auto-cols-max gap-4 justify-start lg:justify-center overflow-x-auto py-4 snap-x snap-mandatory">
                 {specialityData.map((item) => (
                     <div key={item.speciality} className="md:p-5 text-center snap-start">
                         <img
