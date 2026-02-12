@@ -9,8 +9,7 @@ import Loading from './pages/Loading'
 
 import Dashboard from './pages/Dashboard/pages/Dashboard'
 import Overview from './pages/Dashboard/pages/Overview'
-const ProfileAdmin = lazy(() => import("./pages/Dashboard/pages/Profile"));
-
+import Add_doctor from './pages/Dashboard/pages/Add_doctor'
 const All_Doctors = lazy(() => import("./pages/All_Doctors"));
 const DoctorPage = lazy(() => import("./pages/DoctorPage"));
 const About = lazy(() => import("./pages/About"));
@@ -20,6 +19,9 @@ const Register = lazy(() => import("./pages/Register"));
 const Login = lazy(() => import("./pages/Login"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+// Dashboard pages
+const ProfileAdmin = lazy(() => import("./pages/Dashboard/pages/Profile"));
+const AllDoctors = lazy(() => import("./pages/Dashboard/pages/All_Doctors"));
 
 function App() {
   const { pathname } = useLocation();
@@ -44,7 +46,11 @@ function App() {
 
             <Route path='dashboard' element={<Dashboard />}>
               <Route index element={<Overview />} />
-              <Route path='profile' element = {<ProfileAdmin />} />
+              <Route path='profile' element={<ProfileAdmin />} />
+              <Route path='profile/:id' element={<ProfileAdmin />} />
+              <Route path='all_doctors' element={<AllDoctors />} />
+              <Route path='add_doctor' element={<Add_doctor />}/>
+              <Route path='edite/:id' element={<Add_doctor />}/>
               <Route path='*' element={<NotFound />} />
             </Route>
 

@@ -37,7 +37,7 @@ const NavBar = () => {
                     <ul ref={MenuSubRef} className={`${op ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"} absolute right-0 top-[110%] w-56 bg-white border border-gray-200 rounded-lg shadow-lg p-1 transition-all duration-300 ease-out origin-top`}>
 
                         <li className="rounded-md overflow-hidden">
-                            <Link to="/dashboard/profile" className="flex items-center gap-3 w-full px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition">
+                            <Link to="/profile" className="flex items-center gap-3 w-full px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition">
                                 <FaceIcon fontSize="small" />
                                 Profile
                             </Link>

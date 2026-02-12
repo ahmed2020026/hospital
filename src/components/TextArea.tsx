@@ -1,8 +1,12 @@
-import { TextField } from '@mui/material'
+import TextField from "@mui/material/TextField";
 
-export const InputText = ({ label, type , value , func }: { label: string, type: string , value?:string , func?:(e:any) => void}) => {
+function TextArea({value , func} : {value:string , func:(e:any) => void}) {
     return (
-        <TextField value={value} name={label} onChange={func} fullWidth aria-label={label} label={label} type={type} id={`margin-none-${label}`} size='small' color='info'
+        <TextField
+            name = "About"
+            label="About"
+            value={value}
+            onChange={func}
             sx={{
                 "& .MuiOutlinedInput-root": {
                     "& fieldset": {
@@ -16,7 +20,13 @@ export const InputText = ({ label, type , value , func }: { label: string, type:
                         borderWidth: "1px"
                     },
                 }
-            }} />
-    )
+            }}
+            multiline
+            rows={4}
+            fullWidth
+            variant="outlined"
+        />
+    );
 }
 
+export default TextArea;

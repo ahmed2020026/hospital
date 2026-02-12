@@ -1,6 +1,5 @@
 import { InputText } from "../components/InputText"
 import { ButtonClick } from "../components/ButtonClick"
-import { SelectInput } from "../components/SelectInput"
 import { Link } from "react-router-dom"
 
 const Register = () => {
@@ -40,7 +39,7 @@ const Register = () => {
                     {/* Gender + Birthday */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <SelectInput />
+                            <InputText type="number" label="age" />
                         </div>
 
                         <div>

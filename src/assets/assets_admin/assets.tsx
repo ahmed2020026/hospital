@@ -49,7 +49,6 @@ export const AsideLinks = [
     { text: 'Specialties', route: '/dashboard/specialties' , icon: <CategoryIcon fontSize='small' /> },
     { text: 'Patients', route: '/dashboard/patients' , icon: <PeopleIcon fontSize='small' /> },
     { text: 'Review', route: '/dashboard/review' , icon: <ReviewsIcon fontSize='small' /> },
-    { text: 'Profile', route: '/dashboard/profile' , icon: <FaceIcon fontSize='small' /> },
     { text: 'Settings', route: '/dashboard/settings' , icon: <SettingsIcon fontSize='small' /> },
     {text:'Website' , route:'/' , icon: <WebIcon fontSize='small' />}
 ]

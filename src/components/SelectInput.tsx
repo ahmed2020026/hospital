@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material"
 
-export const SelectInput = () => {
+export const SelectInput = ({label , values ,value , func}:{label:string , values:string[] ,value:string, func:(e:any) => void}) => {
     return (
         <FormControl fullWidth size="small" sx={{
             "& .MuiOutlinedInput-root": {
@@ -16,14 +16,17 @@ export const SelectInput = () => {
                 },
             }
         }} >
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <InputLabel id="demo-simple-select-label">{label}</InputLabel>
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                label="Age">
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                name={label}
+                onChange={func}
+                value={value || ''}
+                label={label}>
+                    {Array.from(values).map((value) => (
+                        <MenuItem value={value}>{value}</MenuItem>
+                    ))}
             </Select>
         </FormControl >
     )

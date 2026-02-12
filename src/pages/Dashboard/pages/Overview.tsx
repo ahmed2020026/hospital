@@ -46,7 +46,7 @@ const Overview = () => {
                 <div className="shadow-lg p-3 bg-white rounded-lg">
                     <Head title="recent activities" />
                     <div className="">
-                        <BasicTable width={300} data={dataFromDB} />
+                        <BasicTable page="overview" width={300} data={dataFromDB} />
                     </div>
                 </div>
                 <div className="lg:col-span-2 ">
