@@ -7,7 +7,7 @@ export const Special = () => {
         <div className="container py-10">
             <HeadSection
                 head="Find by Speciality"
-                discripion="Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free."
+                description="Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free."
             />
 
             <div className="hide-scrollbar px-5 grid grid-flow-col auto-cols-max gap-4 justify-start lg:justify-center overflow-x-auto py-4 snap-x snap-mandatory">
