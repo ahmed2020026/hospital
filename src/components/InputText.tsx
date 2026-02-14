@@ -1,8 +1,33 @@
-import { TextField } from '@mui/material'
+import { TextField } from '@mui/material';
+import React from 'react';
 
-export const InputText = ({ label, type , value , func }: { label: string, type: string , value?:string , func?:(e:any) => void}) => {
+interface InputTextProps {
+    label: string;
+    type: string;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const InputText: React.FC<InputTextProps> = ({
+    label,
+    type,
+    value = '',
+    onChange,
+}) => {
+    const id = `input-${label.replace(/\s+/g, '-')}`;
+
     return (
-        <TextField value={value} name={label} onChange={func} fullWidth aria-label={label} label={label} type={type} id={`margin-none-${label}`} size='small' color='info'
+        <TextField
+            id={id}
+            name={label}
+            label={label}
+            value={value}
+            onChange={onChange}
+            fullWidth
+            size="small"
+            type={type}
+            color="info"
+            aria-label={label}
             sx={{
                 "& .MuiOutlinedInput-root": {
                     "& fieldset": {
@@ -13,10 +38,10 @@ export const InputText = ({ label, type , value , func }: { label: string, type:
                     },
                     "&.Mui-focused fieldset": {
                         borderColor: '#0288d1',
-                        borderWidth: "1px"
+                        borderWidth: "1px",
                     },
-                }
-            }} />
-    )
-}
-
+                },
+            }}
+        />
+    );
+};

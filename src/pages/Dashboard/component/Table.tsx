@@ -14,15 +14,16 @@ import { useNavigate } from 'react-router-dom';
 
 interface DynamicTableProps {
     data: Record<string, any>[],
-    width: number,
-    page: string
+    width?: number,
+    page: string,
+    onEdit?: (id: number) => void;
 }
 
-export default function BasicTable({ data, width, page }: DynamicTableProps) {
+export default function BasicTable({ data, width, page, onEdit }: DynamicTableProps) {
     const nav = useNavigate();
 
-    const GoTo = (e:string) => nav(`/dashboard/${e}`);
-    
+    const GoTo = (e: string) => nav(`/dashboard/${e}`);
+
     return page === 'overview' ? (
         <TableContainer component={Paper} sx={{ boxShadow: '0 0 2px #999' }}>
             <Table sx={{ minWidth: width }} aria-label="customized table">
@@ -81,7 +82,7 @@ export default function BasicTable({ data, width, page }: DynamicTableProps) {
                     <TableBody>
                         {data.map((item) => (
                             <TableRow
-                                key={item._id || item.name}
+                                key={item.id || item.name}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 <TableCell
@@ -117,13 +118,13 @@ export default function BasicTable({ data, width, page }: DynamicTableProps) {
                                     {item.fees}
                                 </TableCell>
                                 <TableCell align="left">
-                                    <IconButton aria-label="view" onClick = {() => GoTo(`profile/${item.id}`)}>
+                                    <IconButton aria-label="view" onClick={() => GoTo(`profile/${item.id}`)}>
                                         <VisibilityIcon />
                                     </IconButton>
                                     <IconButton aria-label="delete" color='error'>
                                         <DeleteIcon />
                                     </IconButton>
-                                    <IconButton aria-label="edite" onClick = {() => GoTo(`edite/${item.id}`)} sx={{color:'#000'}}>
+                                    <IconButton aria-label="edite" onClick={() => GoTo(`edite/${item.id}`)} sx={{ color: '#000' }}>
                                         <EditIcon />
                                     </IconButton>
                                 </TableCell>
@@ -133,5 +134,48 @@ export default function BasicTable({ data, width, page }: DynamicTableProps) {
 
                 </Table>
             </TableContainer>
-        ) : ('')
+        ) : (
+            <TableContainer component={Paper} sx={{ boxShadow: '0 0 2px #999' }}>
+                <Table sx={{ minWidth: '100%' }} aria-label="customized table">
+                    <TableHead sx={{ backgroundColor: '#000' }}>
+                        <TableRow>
+                            <TableCell sx={{ color: 'white', py: 1 }}>Speciality</TableCell>
+                            <TableCell sx={{ color: 'white', py: 1, textAlign: 'right', pr: 5 }}>Action</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {data.map((data) => (
+                            <TableRow
+                                key={data.speciality}
+                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                            >
+                                <TableCell align="left" sx={{
+                                    display: 'flex',
+                                    justifyContent: 'start',
+                                    alignItems: 'center',
+                                    gap: '10px'
+                                }}>
+                                    <img
+                                        src={data.image || assets.profile}
+                                        alt="profile"
+                                        className="w-10 h-10 block shrink-0"
+                                    />
+                                    <div>
+                                        <h3 className='font-medium text-black text-base -mb-1'>{data.speciality}</h3>
+                                    </div>
+                                </TableCell>
+                                <TableCell align="right">
+                                    <IconButton aria-label="delete" color='error'>
+                                        <DeleteIcon />
+                                    </IconButton>
+                                    <IconButton aria-label="edite" onClick={() => onEdit?.(data.id)}>
+                                        <EditIcon />
+                                    </IconButton>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        )
 }

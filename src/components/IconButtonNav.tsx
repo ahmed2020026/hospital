@@ -6,25 +6,26 @@ type IconButtonNavProps = {
     color?: string;
     bgColor?: string;
     text?: string;
-    func?: () => void;
+    onClick?: () => void;
 };
 
-export const IconButtonNav = ({
+export const IconButtonNav: React.FC<IconButtonNavProps> = ({
     icon,
-    color,
-    bgColor,
-    text = "Icon",
-    func,
-}: IconButtonNavProps) => {
+    color = "gray",
+    bgColor = "rgba(25, 118, 210, 0.08)",
+    text = "Navigation button",
+    onClick,
+}) => {
     return (
         <IconButton
             aria-label={text}
-            onClick={func}
+            onClick={onClick}
             sx={{
-                color: color || "gray",
-                "&:hover": {
+                color: color,
+                "&:hover, &:focus-visible": {
                     color: color || "#1976d2",
-                    backgroundColor: bgColor || "rgba(25, 118, 210, 0.08)",
+                    backgroundColor: bgColor,
+                    outline: "none",
                 },
             }}
         >

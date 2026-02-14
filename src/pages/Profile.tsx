@@ -28,6 +28,7 @@ const Profile = () => {
                         color="info"
                         aria-label="Edit your profile information"
                     />
+
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

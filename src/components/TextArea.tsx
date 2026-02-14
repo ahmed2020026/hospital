@@ -1,12 +1,28 @@
+import React from "react";
 import TextField from "@mui/material/TextField";
 
-function TextArea({value , func} : {value:string , func:(e:any) => void}) {
+interface TextAreaProps {
+    label?: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    rows?: number;
+}
+
+const TextArea: React.FC<TextAreaProps> = ({ label = "About", value = '', onChange, rows = 4 }) => {
+    const id = `textarea-${label.replace(/\s+/g, '-')}`;
+
     return (
         <TextField
-            name = "About"
-            label="About"
+            id={id}
+            name={label}
+            label={label}
+            aria-label={label}
             value={value}
-            onChange={func}
+            onChange={onChange}
+            multiline
+            rows={rows}
+            fullWidth
+            variant="outlined"
             sx={{
                 "& .MuiOutlinedInput-root": {
                     "& fieldset": {
@@ -21,12 +37,8 @@ function TextArea({value , func} : {value:string , func:(e:any) => void}) {
                     },
                 }
             }}
-            multiline
-            rows={4}
-            fullWidth
-            variant="outlined"
         />
     );
-}
+};
 
 export default TextArea;

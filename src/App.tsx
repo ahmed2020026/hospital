@@ -7,9 +7,7 @@ import { Footer } from './sections/Footer'
 import { lazy, Suspense } from 'react'
 import Loading from './pages/Loading'
 
-import Dashboard from './pages/Dashboard/pages/Dashboard'
-import Overview from './pages/Dashboard/pages/Overview'
-import Add_doctor from './pages/Dashboard/pages/Add_doctor'
+
 const All_Doctors = lazy(() => import("./pages/All_Doctors"));
 const DoctorPage = lazy(() => import("./pages/DoctorPage"));
 const About = lazy(() => import("./pages/About"));
@@ -22,6 +20,10 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 // Dashboard pages
 const ProfileAdmin = lazy(() => import("./pages/Dashboard/pages/Profile"));
 const AllDoctors = lazy(() => import("./pages/Dashboard/pages/All_Doctors"));
+const Dashboard = lazy(() => import('./pages/Dashboard/pages/Dashboard'));
+const Overview = lazy(() => import('./pages/Dashboard/pages/Overview'));
+const Add_doctor = lazy(() => import('./pages/Dashboard/pages/Add_doctor'));
+const Specialities = lazy(() => import('./pages/Dashboard/pages/Specialities'));
 
 function App() {
   const { pathname } = useLocation();
@@ -49,8 +51,9 @@ function App() {
               <Route path='profile' element={<ProfileAdmin />} />
               <Route path='profile/:id' element={<ProfileAdmin />} />
               <Route path='all_doctors' element={<AllDoctors />} />
-              <Route path='add_doctor' element={<Add_doctor />}/>
-              <Route path='edite/:id' element={<Add_doctor />}/>
+              <Route path='add_doctor' element={<Add_doctor />} />
+              <Route path='edite/:id' element={<Add_doctor />} />
+              <Route path='specialties' element={<Specialities />} />
               <Route path='*' element={<NotFound />} />
             </Route>
 

@@ -11,7 +11,7 @@ export const TopDoctors = () => {
         <div className="container py-10">
             <HeadSection
                 head="Top Doctors to Book"
-                discripion="Simply browse through our extensive list of trusted doctors."
+                description="Simply browse through our extensive list of trusted doctors."
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

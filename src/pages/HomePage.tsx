@@ -1,23 +1,23 @@
-import { Appointment } from "../sections/Apportiment"
-import { Hero } from "../sections/Hero"
-import { Special } from "../sections/Special"
-import { TopDoctors } from "../sections/TopDoctors"
+import { Appointment } from "../sections/Apportiment";
+import { Hero } from "../sections/Hero";
+import { Special } from "../sections/Special";
+import { TopDoctors } from "../sections/TopDoctors";
 
 export const HomePage = () => {
     return (
         <>
-            <section className='section p-2 flex items-center'>
+            <section id="hero" className="section p-2 flex items-center">
                 <Hero />
             </section>
-            <section className='p-2'>
+            <section id="specialties" className="p-2">
                 <Special />
             </section>
-            <section className='section p-2'>
+            <section id="top-doctors" className="section p-2">
                 <TopDoctors />
             </section>
-            <section className="section p-2">
+            <section id="appointment" className="section p-2">
                 <Appointment />
             </section>
         </>
-    )
-}
+    );
+};
