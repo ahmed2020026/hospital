@@ -22,8 +22,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import WebIcon from '@mui/icons-material/Web';
 import CategoryIcon from '@mui/icons-material/Category';
 import PeopleIcon from '@mui/icons-material/People';
-import FaceIcon from '@mui/icons-material/Face';
-
 
 export const assets = {
     add_icon,
